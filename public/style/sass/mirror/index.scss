@@ -1,0 +1,106 @@
+/* MIRROR UI GLOBALS
+--------------------------------------------- */
+
+.mirror {
+  position: relative;
+  padding: 3em;
+  overflow: hidden;
+  background: $color-mirror-bg;
+  color: $color-mirror-body;
+  font-size: 100%;
+  line-height: 1.25;
+
+  p {
+    line-height: 1.5;
+  }
+}
+
+/* MIRROR UI LAYOUT
+ * Notes: the flexbox layout work in this section
+ * anchors eye-level stuff to the top, centers
+ * the face detection/greetings in the middle,
+ * and pushes low-priority content to the bottom. */
+.auth-states {
+  margin: 1.5em auto;
+}
+
+@media (min-width: $bp-m) {
+  .auth-states {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mirror,
+  .auth-state {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mirror {
+    flex-direction: column;
+    min-height: 100vh;
+
+    justify-content: space-between;
+  }
+
+  .eyelevel {
+    width: 100%;
+
+    align-self: flex-start;
+  }
+
+  .auth-state {
+    min-height: 100%;
+  }
+
+  .auth-state-content {
+    flex: 1;
+  }
+
+  .low-pri-content {
+    width: 100%;
+
+    align-self: flex-end;
+  }
+
+  #weather {
+    float: left;
+  }
+
+  .timely-content {
+    float: right;
+  }
+}
+
+#video-hidden {
+  display: none;
+}
+
+/* HIDE THESE VISUALLY WHEN HIDDEN FROM SCREEN READERS */
+.auth-state[aria-hidden="true"],
+.low-pri-content[aria-hidden="true"],
+#weather[aria-hidden="true"] {
+  display: none;
+  opacity: 0;
+}
+
+/* SUBSECTIONS OF MIRROR */
+
+/* Different states of face detection */
+@import "auth-states";
+
+/* Weather */
+@import "weather";
+
+/* Time stamp and other content in top-left */
+@import "timely-content";
+
+/* Content at bottom of mirror UI */
+@import "low-pri-content";

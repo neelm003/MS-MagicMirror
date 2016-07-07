@@ -1,0 +1,45 @@
+/* GLOBAL (Setup and/or mirror UI)
+--------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-regular;
+  font-size: 125%;
+  line-height: 1.333;
+}
+
+.clear:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+/* TEXT STYLES */
+
+h1 {
+  margin: 0 auto .75em;
+  font: 400 normal 2em $font-bold;
+}
+
+@media (min-width: $bp-m) {
+  body {
+    font-size: 150%;
+  }
+}
+
+/* ICONS */
+
+/* Icons in :before/:after pseudo-elements */
+%icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  background-image: url("../icons/icons.svg");
+  background-size: 160px 80px;
+  content: "";
+}

@@ -1,0 +1,336 @@
+/* ACCOUNT SETUP
+--------------------------------------------- */
+
+.setup {
+  padding: 1em;
+  background: $color-setup-bg;
+  background: linear-gradient(227deg, $color-setup-bg, $color-setup-bg2, $color-setup-bg3, $color-setup-bg2);
+  background-size: 800% 800%;
+  text-align: center;
+}
+
+.anim-button {
+  display: none;
+  margin-bottom: 2em;
+  padding: .25em;
+  opacity: .6;
+  border: 2px solid #000;
+  background: transparent;
+  font: 400 normal .625em $font-bold;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.anim-button:hover {
+  opacity: 1;
+  background: #000;
+  color: #fff;
+}
+
+
+.anim-button:active {
+  background: #fff;
+  color: #000;
+}
+
+/* Allow user to toggle animations */
+.setup.anim-active {
+  -webkit-animation: gradientAnim 20s ease infinite;
+     -moz-animation: gradientAnim 20s ease infinite;
+          animation: gradientAnim 20s ease infinite;
+}
+
+@-webkit-keyframes gradientAnim {
+  0% {
+    background-position: 93% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 93% 0%;
+  }
+}
+
+@-moz-keyframes gradientAnim {
+  0% {
+    background-position: 93% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 93% 0%;
+  }
+}
+
+@keyframes gradientAnim {
+  0% {
+    background-position: 93% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 93% 0%;
+  }
+}
+
+.setup-content {
+  position: relative;
+  margin: 0 auto;
+  padding: 1em;
+  width: 100%;
+  max-width: 40em;
+  border-top: 8px solid #efefef;
+  background: #fff;
+  text-align: left;
+
+  a {
+    border-bottom: 1px solid;
+    color: $color-setup-link;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-setup-link-hover;
+    }
+
+    &:active {
+      border-bottom: 0;
+      color: $color-setup-link-active;
+    }
+  }
+}
+
+.setup-content::before {
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 0;
+  height: 8px;
+  background: #000;
+  content: "";
+}
+
+.setup-pagination {
+  margin: 0 auto 1em;
+  color: #5b5b5b;
+  text-align: center;
+}
+
+.pagination-title {
+  margin: 0 0 .5em;
+  font: 400 normal 1em/1 $font-bold;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.pagination-title + p {
+  margin: 0;
+}
+
+/* FORMS */
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+input,
+button {
+  padding: .5em;
+  border: 0;
+  outline: 0;
+  font-family: $font-regular;
+  font-size: 1em;
+}
+
+label {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"] {
+  display: block;
+  width: 100%;
+  border: 2px solid #777;
+  color: #5b5b5b;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  position: relative;
+  border-color: #000;
+  background: #eff3f3;
+  color: #000;
+}
+
+input[type="submit"],
+button {
+  cursor: pointer;
+}
+
+#form-errors {
+  display: none;
+  color: #cd0a0a;
+
+  p {
+    margin: 2em 0;
+    padding: 1em;
+    border: 2px solid;
+  }
+}
+
+.field-item {
+  margin-bottom: 1em;
+
+  .check-label,
+  .radio-label {
+    position: relative;
+    padding-left: 1.75em;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      position: absolute;
+      left: 0;
+      width: 1em;
+      height: 1em;
+    }
+  }
+}
+
+.submit-wrapper {
+  margin: 2em 36px 0;
+}
+
+.back-btn,
+.forward-btn {
+  position: relative;
+  padding: .5em 0;
+  background: transparent;
+  color: #000;
+  text-decoration: none;
+
+  &:before {
+    @extend %icon;
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Reset link styles */
+a.back-btn,
+a.back-btn:hover,
+a.back-btn:active {
+  border-bottom: 0;
+  color: #000;
+}
+
+.back-btn {
+  float: left;
+
+  &:before {
+    left: -36px;
+    background-position: -120px 0;
+  }
+
+  &:hover:before {
+    left: -40px;
+  }
+}
+
+.forward-btn {
+  float: right;
+
+  &:before {
+    right: -36px;
+    background-position: -80px 0;
+  }
+
+  &:hover:before {
+    right: -40px;
+  }
+}
+
+@media (min-width: $bp-m) {
+  .setup-title {
+    font-size: 3.5em;
+  }
+
+  .setup {
+    padding: 3em;
+  }
+
+  .anim-button {
+    position: fixed;
+    z-index: 2;
+    top: 2em;
+    right: 2em;
+  }
+
+  .setup-content {
+    padding: 2em;
+    text-align: center;
+  }
+
+  .setup-pagination {
+    margin-bottom: 2em;
+  }
+
+  .field-item {
+    label,
+    input {
+      display: inline-block;
+    }
+
+    label {
+      padding-right: 1em;
+      width: 30%;
+      text-align: left;
+    }
+
+    .check-label,
+    .radio-label {
+      margin-left: 30%;
+      width: 60%;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      padding: .5em .25em;
+      width: 60%;
+      border-width: 0;
+      border-bottom-width: 2px;
+    }
+  }
+
+  .submit-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+  }
+}
+
+.attribution {
+  display: block;
+  margin: 4em auto 0;
+  max-width: 30em;
+  font-size: .5em;
+  line-height: 1.5;
+
+  a {
+    color: inherit;
+  }
+
+  a:hover {
+    opacity: .6;
+  }
+
+}
+
+/* SUBSECTIONS OF ACCOUNT SETUP */
+@import "create-profile";
+@import "capture-face";
+@import "tos"; /* Terms of Service */

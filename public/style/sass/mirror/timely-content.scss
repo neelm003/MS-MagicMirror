@@ -1,0 +1,16 @@
+/* MIRROR UI: TIMELY CONTENT
+ * (Timestamp and high-priority alerts)
+ * @TODO: Add weather icons
+--------------------------------------------- */
+
+.timely-content {
+  text-align: center;
+}
+
+#timestamp {
+  font-size: 2em;
+}
+
+#time {
+  font: 5em/1 $font-light;
+}

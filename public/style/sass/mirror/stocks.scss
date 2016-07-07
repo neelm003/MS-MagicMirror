@@ -1,0 +1,41 @@
+/* STOCKS
+--------------------------------------------- */
+
+.stocks-title {
+  &:before {
+    background-position: -43px -43px;
+  }
+}
+
+.ticker-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li + li {
+    margin-top: .5em;
+  }
+}
+
+.symbol {
+  font-family: $font-bold;
+}
+
+.pos-change,
+.neg-change {
+  position: relative;
+
+  &:before {
+    @extend %icon;
+    left: -40px;
+    margin-top: -12px;
+    width: 20px;
+    height: 24px;
+  }
+}
+
+.neg-change {
+  &:before {
+    background-position: -40px 0;
+  }
+}

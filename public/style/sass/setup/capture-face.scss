@@ -1,0 +1,41 @@
+/* CAPTURE FACE */
+.face-setup .setup-content::before {
+  width: 100%;
+}
+
+.capture-face {
+  overflow-y: visible;
+}
+
+.capture-face #video {
+  position: relative;
+  margin: 0 auto 1em;
+  padding-top: 75%;
+  width: 100%;
+  background: #000;
+}
+
+.capture-face #cameraPreview,
+.capture-face #facesCanvas {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.capture-face #facesCanvas {
+  z-index: 2;
+}
+
+#message,
+#snapshot {
+  text-align: center;
+}
+
+@media (min-width: $bp-m) {
+  .capture-face #video {
+    width: 90%;
+  }
+}

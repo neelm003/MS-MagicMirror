@@ -1,0 +1,30 @@
+/* AUTH STATES
+--------------------------------------------- */
+
+.auth-state {
+  opacity: 1;
+  font-family: $font-light;
+  text-align: center;
+  transition: opacity 400ms ease-in-out;
+}
+
+.auth-state-title {
+  margin: 0 auto;
+  max-width: 10em;
+  font-size: 4em;
+}
+
+.greeting-salutation,
+.greeting-name {
+  display: block;
+}
+
+.auth-state-content {
+  p {
+    margin: 4em auto 0;
+    max-width: 22em;
+    text-align: left;
+  }
+}
+
+/* AUTH STATE: LOGGING OUT */

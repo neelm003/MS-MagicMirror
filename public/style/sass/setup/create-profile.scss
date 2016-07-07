@@ -1,0 +1,15 @@
+/* CREATE PROFILE */
+
+/* Prevent scrollbar page jump when autocomplete triggered */
+.profile-setup {
+  overflow-y: scroll;
+}
+
+.profile-setup .setup-content::before {
+  width: 50%;
+}
+
+.tos-field {
+  margin-top: 2em;
+  font-size: .75em;
+}
